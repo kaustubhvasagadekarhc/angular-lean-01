@@ -1,0 +1,17 @@
+.home {
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.editable-text {
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.editable-text:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}

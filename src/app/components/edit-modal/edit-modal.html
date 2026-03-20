@@ -1,0 +1,9 @@
+<div class="modal-overlay" (click)="onSave()">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <h3>Edit Text</h3>
+    <input type="text" [value]="text()" (input)="onInput(textInput.value)" #textInput />
+    <div class="modal-actions">
+      <button class="save-btn" (click)="onSave()">Save</button>
+    </div>
+  </div>
+</div>
