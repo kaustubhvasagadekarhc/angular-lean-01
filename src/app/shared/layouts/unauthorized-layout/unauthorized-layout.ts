@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-unauthorized-layout',
   imports: [RouterOutlet],
-  templateUrl: './app.html',
+  templateUrl: `./unauthorized-layout.html`,
 })
-export class App {}
+export class UnauthorizedLayout {}
