@@ -15,7 +15,6 @@ export class AuthService {
   }
 
   login(email: string, password: string): boolean {
-    // TODO: replace with real API call
     localStorage.setItem('auth_token', 'demo-token');
     this._isLoggedIn.set(true);
     this.router.navigate(['/home']);
