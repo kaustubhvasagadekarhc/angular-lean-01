@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { EditModal } from '../components/edit-modal/edit-modal';
+import { EditModal } from '../../shared/components/edit-modal/edit-modal';
 
 @Component({
   selector: 'app-home',
