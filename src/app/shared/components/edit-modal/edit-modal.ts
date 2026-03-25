@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-edit-modal',
@@ -6,9 +6,9 @@ import { Component, input, output } from '@angular/core';
   styleUrl: './edit-modal.css',
 })
 export class EditModal {
-  text = input.required<string>();
-  textChange = output<string>();
-  close = output<void>();
+  @Input({ required: true }) text!: string;
+  @Output() textChange = new EventEmitter<string>();
+  @Output() close = new EventEmitter<void>();
 
   onInput(value: string) {
     this.textChange.emit(value);

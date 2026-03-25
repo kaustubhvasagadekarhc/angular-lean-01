@@ -1,6 +1,34 @@
 <section class="max-w-7xl mx-auto px-6 py-16">
   <h2 class="text-3xl font-bold text-gray-900 mb-4">About</h2>
-  <p class="text-lg text-gray-600 leading-relaxed max-w-2xl">
-    This is a modern Angular application built with Tailwind CSS, signals, and standalone components.
+  <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mb-12">
+    This page demonstrates two ways to handle parent-child communication in Angular:
+    the classic <code class="bg-gray-100 px-1.5 py-0.5 rounded text-sm font-mono">&#64;Input/&#64;Output</code> decorators
+    vs the modern <code class="bg-gray-100 px-1.5 py-0.5 rounded text-sm font-mono">input()/output()</code> signals.
   </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl">
+    <!-- Modern signal-based: input() / output() -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
+      <h3 class="text-lg font-semibold text-gray-900 mb-1">Modern (Signal-based)</h3>
+      <p class="text-sm text-gray-500 mb-1"><code class="font-mono">input()</code> / <code class="font-mono">output()</code></p>
+      <p class="text-xs text-gray-400 mb-4">Step size: 5</p>
+      <app-counter
+        [initialValue]="10"
+        [step]="5"
+        (countChange)="onModernChange($event)" />
+      <p class="mt-4 text-sm text-gray-600">Parent received: <span class="font-semibold text-indigo-600">{{ modernCount() }}</span></p>
+    </div>
+
+    <!-- Classic decorator: @Input / @Output -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
+      <h3 class="text-lg font-semibold text-gray-900 mb-1">Classic (Decorator)</h3>
+      <p class="text-sm text-gray-500 mb-1"><code class="font-mono">&#64;Input()</code> / <code class="font-mono">&#64;Output()</code></p>
+      <p class="text-xs text-gray-400 mb-4">Step size: 3</p>
+      <app-counter-classic
+        [initialValue]="0"
+        [step]="3"
+        (countChange)="onClassicChange($event)" />
+      <p class="mt-4 text-sm text-gray-600">Parent received: <span class="font-semibold text-indigo-600">{{ classicCount() }}</span></p>
+    </div>
+  </div>
 </section>
